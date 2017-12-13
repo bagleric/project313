@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Circuit Maker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/main.css" /> </head>
+<script src="db.js"></script>
+<script src="timer.js"></script>
+
+<body>
+    <nav class="navbar navbar-light bg-light"> <a class="navbar-brand" href="home.html">Circuit Maker </a>
+        <div class="nav-item justify-content-end"> <a class="nav-link active" href="home.html">Reset</a> </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <!--Category navigation-->
+            <div class="col-md-3 general-box default-primary-color">
+                <div class="title">Category</div>
+                <div id="category" class="list"></div>
+            </div>
+            <!--Exercise div-->
+            <div class="col-md-6 general-box default-primary-color">
+                <div class="title">Exercises</div>
+                <div id="exercise" class="list"></div>
+            </div>
+            <!--selectedExercies div-->
+            <div class="list col-md-3 general-box default-primary-color">
+                <div class="title">Selected Exercises</div>
+                <div id="selectedExercises" class="list"></div> </div>
+        </div>
+    </div>
+    <!--timer div-->
+    <div id="timer" class="timer row dark-primary-color">
+        <div class="container text-primary-color ">
+            <div class="row">
+                <div class="col-md-3 auto-mg">
+                    <div>
+                        <label class="label" for="circuitTime" id="circuitTimeTitle">Circuit Time</label>
+                        <select class="input" id="circuitTime" name="circuitTime">
+                            <option value="30">30 seconds</option>
+                            <option value="45">45 seconds</option>
+                            <option value="60">60 seconds</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label" for="numInterval" id="numIntervalTitle">Number of Intervals</label>
+                        <input class="input" id="numInterval" type="number" step="1" min="1" placeholder="No. of Intervals" value="1"/> </div>
+                </div>
+                <div id="currentExercise" class="col-md-7 auto-mg"> EXCERSISE</div>
+                <div id="timeBox" class="clock-group col-md-2 ">
+                    <button id="startbtn" onclick="start();" class="time-box"> START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/header.ejs %>
+</head>
+
+<body>
+    <% include ../partials/nav.ejs %>
+        <div class="container">
+            <div class="row">
+                <!--Category navigation-->
+                <div class="col-md-3">
+                    <h3 class="title">Category</h3>
+                    <div id="category" class="list general-box default-primary-color">Loading...</div>
+                </div>
+                <!--Exercise div-->
+                <div class="col-md-6">
+                    <h3 class="title">Exercises</h3>
+                    <div id="exercise" class="list general-box default-primary-color">No Category Selected
+                    
+                    </div>
+                </div>
+                <!--selectedExercies div-->
+                <div class="list col-md-3">
+                    <h3 class="title">Selected Exercises</h3>
+                    <div id="selectedExercises" class="list general-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--timer div-->
+        <div id="timer" class="timer row dark-primary-color">
+            <div class="container text-primary-color ">
+                <div class="row">
+                    <div class="col-md-4 auto-mg">
+                        <div class="p1">
+                            <label class="label" for="circuitTime" id="circuitTimeTitle">Circuit Time</label>
+                            <select class="input" id="circuitTime" name="circuitTime">
+                                <option value="30">30 seconds</option>
+                                <option value="45">45 seconds</option>
+                                <option value="60">60 seconds</option>
+                            </select>
+                        </div>
+                        <div class="p1">
+                            <label class="label" for="numInterval" id="numIntervalTitle">Number of Intervals</label>
+                            <input class="input" id="numInterval" type="number" step="1" min="1" placeholder="No. of Intervals" value="1" /> </div>
+                    </div>
+                    <div id="currentExercise" class="col-md-6 auto-mg"> Add some exercises and click "Start" to begin your circuit workout!</div>
+                    <div id="timeBox" class="clock-group col-md-2 ">
+                        <button id="startbtn" onclick="start();" class="time-box"> START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

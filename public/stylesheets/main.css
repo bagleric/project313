@@ -1,0 +1,111 @@
+body{
+    font-size: 20px;
+}
+.general-box {
+    color: aliceblue;
+    border: solid white 3px;
+    padding: 20px;
+    margin-bottom: 160px;
+}
+
+.timer {
+    position: fixed;
+    bottom: 0px;
+    padding: 20px;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+
+}
+
+.category-item{
+    margin: 5px;
+    padding:5px;
+}
+.clock-group {
+    width:auto;
+    height:auto;
+}
+
+.time-box{
+    font-size: 25px;
+    padding: 10px;
+    margin: 2px;
+    background-color: #FF5252;
+    text-align: center;
+    width: 150px;
+    border: 3px solid white;
+}
+.input{
+    width:130px;
+    color: black;
+}
+.label{
+    width:100px;
+    margin-bottom: 10px;
+}
+.auto-mg{
+    margin: auto;
+}
+
+.title{
+    background:#FF5252;
+    padding: 10px;
+    color:white;
+}
+
+.p1{
+    padding: 5px;
+}
+.m-bottom{
+    margin-bottom: 20px;
+}
+
+.exercise-card{
+    margin: 5px;
+    padding: 5px;  
+    color: #FFFFFF;    
+}
+exercise-card-header{
+    
+}
+.exercise-card-title:hover,.exercise-card-title:visited, .exercise-card-title:link {
+    color:white;
+}
+.exercise-card-title{
+    font-size: 20px;
+}
+.exercise-card-body{
+    
+}
+.exerciseTile{
+    width:97%;
+    margin: 3px;
+    background: #607D8B;
+    margin:5px;    
+    padding:10px;
+}
+.exerciseTitle{
+    font-weight: bold; 
+    width: 60%;
+}
+.exerciseButton{
+    font-weight: bolder; 
+    height:25px;
+    background: #607D8B;
+    color: #CFD8DC;
+    border: none;
+    margin: 1px;
+}
+#selectedExercises{
+    padding:0;
+}
+
+.dark-primary-color    { background: #455A64; }
+.default-primary-color { background: #607D8B; }
+.light-primary-color   { background: #CFD8DC; }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #FF5252; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
