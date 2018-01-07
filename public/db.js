@@ -72,8 +72,10 @@ function addexercise(exercise, category, title) {
     var now = new Date();
     var resultList = $("#selectedExercises");
     var id = exercise + category + now.getMilliseconds()
-    resultList.prepend("<div class=\"row exerciseTile\" id=\"" + id + "\">" + "<div class=\"exerciseTitle col-sm-8\">" + title + "</div>" + "<div class=\"col-sm-4\">\n" + "<button type=\"button\" class=\"btn btn-secondary exerciseButton dark-primary-color\" onclick=\"removeexercise('" + id + "');\" data-toggle=\"tooltip\" data-placement=\"bottom\"" + "title=\"Remove from Exercises\">X</button>" + "</div>" + "</div>");
+    resultList.prepend("<div class=\"row exerciseTile\" id=\"" + id + "\">"+  "<div class=\"hamburger-holder col-sm-1\"><img class=\"hamburger\" src=\"hamburger.png\"></div>" + "<div class=\"exerciseTitle col-sm-7\">" + title + "</div>" + "<div class=\"col-sm-3\">\n" + "<button type=\"button\" class=\"btn btn-secondary exerciseButton dark-primary-color\" onclick=\"removeexercise('" + id + "');\" data-toggle=\"tooltip\" data-placement=\"bottom\"" + "title=\"Remove from Exercises\">X</button>" + "</div>" + "</div>");
 }
+
+
 
 function removeexercise(tag) {
     var mydiv = $("#selectedExercises");

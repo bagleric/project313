@@ -1,3 +1,32 @@
+//TODO phase 1
+//Add a countdown to start
+//Add sound to signal end and begining of getExercises
+//Add categories (EX home: no machine weights and equipment - dumbells okay; Gym: weights and equipment)
+//Change exercise intervals to number of circuits
+//add an "exercise left" countdown
+//Make the categories buttons (or at least look clickable)
+//add a "Loading..." text to the exercises list when a category is clicked
+//add pictures to the descriptions
+//if the service is unavailable (503 Error) then update the page accordingly.
+
+//COMPLETED phase 1
+//Timer green when going
+//make exercises dragable
+
+
+//TODO phase 2
+//create user login and profile
+//allow user to create and save exercises
+//allow user to create and save workouts
+
+
+
+//dragable selected exercises
+  $( function() {
+    $( "#selectedExercises" ).sortable();
+    $( "#selectedExercises" ).disableSelection();
+  } );
+
 var breakTime = 15;
 var timer = {
     intervals: 0
@@ -123,7 +152,7 @@ function resumeTimer() {
         }
         //otherwise make the color red 
         else {
-            $(".time-box").css("background", "#FF5252");
+            $(".time-box").css("background", "#4CAF50");
         }
 
         //decrement the time
