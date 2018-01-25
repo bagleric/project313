@@ -37,19 +37,15 @@ var timer = {
     , intervalSecondsRemaining: 0
     , setIntervalVariable: function () {}
     , getCircuitSecondsRemaining: function () {
-        console.log(this.circuitSecondsRemaining);
         return this.circuitSecondsRemaining;
     }
     , getIntervalSecondsRemaining: function () {
-        console.log(this.intervalSecondsRemaining);
         return this.intervalSecondsRemaining;
     }
     , setIntervalSecondsRemaining: function (num) {
         this.intervalSecondsRemaining = num;
-        console.log(this.intervalSecondsRemaining);
     }
     , setTimer: function (intervals, intervalTime) {
-        console.log(intervals);
         this.intervals = intervals;
         this.intervalTime = intervalTime;
         this.circuitSecondsRemaining = this.intervals * this.intervalTime + this.intervals * breakTime + this.intervals*2;
@@ -74,6 +70,8 @@ $("#pausebtn").click(pauseTimer);
 $("#resumebtn").click(resumeTimer);
 $(document).ready(function () {
     console.log("ready");
+      var selectedExercises = document.getElementById("selectedExercises").children;
+    var title = selectedExercises.item(0).children.item(1);
 });
 
 
@@ -187,11 +185,10 @@ function resetIntervalTime(){
 }
 
 function updateExerciseQueue(){
-    var selectedExercises = document.getElementById("selectedExercises").childNodes;
+    var selectedExercises = document.getElementById("selectedExercises").children;
     console.log(selectedExercises);
-    var index = timer.currentExerciseId % (selectedExercises.length-1);
-    var eSize = selectedExercises.length -1;
-    console.log(eSize);
+    var eSize = selectedExercises.length;
+    var index = timer.currentExerciseId % (eSize);
     $("#currentExercise").empty();
     if( eSize < 1){
         $("#currentExercise").append("<h3>No Exercise Selected</h3>");
@@ -204,13 +201,13 @@ function updateExerciseQueue(){
         }
         else{
             //get the next exercise
-            var nextExercise = selectedExercises.item((index + 1)%eSize).childNodes.item(0).innerHTML;
+            var nextExercise = selectedExercises.item((index + 1)%eSize).children.item(1).innerHTML;
             $("#currentExercise").append("<p>Coming up: " + nextExercise + "</strong>"); 
         } 
     }
     else{
         //get the current exercise. 
-        var currentExercise = selectedExercises.item(index).childNodes.item(0).innerHTML;
+        var currentExercise = selectedExercises.item(index).children.item(1).innerHTML;
         console.log("CurrentExercise: " +currentExercise);
         $("#currentExercise").append("<h1><strong>"+ currentExercise+ "</strong></h1>");
     }     
