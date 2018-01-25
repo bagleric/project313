@@ -34,6 +34,7 @@ function updateCategoryList(data) {
 }
 
 function getExercises(id) {
+    $('#exercise').empty().append("<h3>Loading...</h3>")
     // Get the value from the search box
     var searchString = $("#txtSearch").val();
     console.log("Searching for: " + searchString);

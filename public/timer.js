@@ -5,13 +5,13 @@
 //Change exercise intervals to number of circuits
 //add an "exercise left" countdown
 //Make the categories buttons (or at least look clickable)
-//add a "Loading..." text to the exercises list when a category is clicked
 //add pictures to the descriptions
 //if the service is unavailable (503 Error) then update the page accordingly.
 
 //COMPLETED phase 1
 //Timer green when going
 //make exercises dragable
+//add a "Loading..." text to the exercises list when a category is clicked
 
 
 //TODO phase 2
@@ -27,7 +27,7 @@
     $( "#selectedExercises" ).disableSelection();
   } );
 
-var breakTime = 15;
+var breakTime = 2;
 var timer = {
     intervals: 0
     , currentExerciseId: 0
@@ -37,15 +37,19 @@ var timer = {
     , intervalSecondsRemaining: 0
     , setIntervalVariable: function () {}
     , getCircuitSecondsRemaining: function () {
+        console.log("c seconds remaining" + this.circuitSecondsRemaining);
         return this.circuitSecondsRemaining;
     }
     , getIntervalSecondsRemaining: function () {
+        console.log("i seconds remaining" +this.intervalSecondsRemaining);
         return this.intervalSecondsRemaining;
     }
     , setIntervalSecondsRemaining: function (num) {
         this.intervalSecondsRemaining = num;
+        console.log("i seconds remaining" +this.intervalSecondsRemaining);
     }
     , setTimer: function (intervals, intervalTime) {
+        console.log("intervals: " +intervals);
         this.intervals = intervals;
         this.intervalTime = intervalTime;
         this.circuitSecondsRemaining = this.intervals * this.intervalTime + this.intervals * breakTime + this.intervals*2;
@@ -71,15 +75,24 @@ $("#resumebtn").click(resumeTimer);
 $(document).ready(function () {
     console.log("ready");
       var selectedExercises = document.getElementById("selectedExercises").children;
+    console.log("selectedExercises");
+    console.log(selectedExercises);
     var title = selectedExercises.item(0).children.item(1);
+    console.log("title");
+    console.log(title);
 });
 
 
 
-
+  function play(){
+      
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
 
 //start
 function start() {
+    play();
     console.log("starting timer: ");
     // clearInterval(setIntervalVariable);
     //get the values from the user
@@ -168,6 +181,10 @@ function resumeTimer() {
 }
 
 function resetIntervalTime(){
+    console.log("c seconds remaining: " + timer.circuitSecondsRemaining);
+    console.log("i seconds remaining: " + timer.intervalSecondsRemaining);
+    console.log("on break: " + timer.break);
+    console.log("current exercise id: " + timer.currentExerciseId);
     if(timer.circuitSecondsRemaining <=0 ){
         //end the program and turn reset everything.
         resetTimer();
@@ -186,9 +203,14 @@ function resetIntervalTime(){
 
 function updateExerciseQueue(){
     var selectedExercises = document.getElementById("selectedExercises").children;
+    console.log("selectedExercises");
+    console.log("selectedExercises");
     console.log(selectedExercises);
+    console.log("timer.currentExerciseId: " + timer.currentExerciseId)
     var eSize = selectedExercises.length;
     var index = timer.currentExerciseId % (eSize);
+    console.log("esize: " + eSize);
+    console.log("index: " + index);
     $("#currentExercise").empty();
     if( eSize < 1){
         $("#currentExercise").append("<h3>No Exercise Selected</h3>");
